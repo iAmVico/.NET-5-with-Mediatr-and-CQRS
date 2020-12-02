@@ -1,0 +1,61 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>DemoProject</name>
+    </assembly>
+    <members>
+        <member name="M:DemoProject.Api.Controllers.CalendarDaysController.GetAllReservations">
+            <summary>
+            Retrieves a list of calendar days. Per day is specified if a reservation is possible or not.
+            </summary>
+            <returns>Returns a list of calendar days.</returns>
+        </member>
+        <member name="M:DemoProject.Api.Controllers.CalendarDaysController.GetAllFreeSpots">
+            <summary>
+            Retrieves a list of calendar days. Per day is specified if the current user can free his own room or not.
+            </summary>
+            <returns>Returns a list of calendar days.</returns>
+        </member>
+        <member name="M:DemoProject.Api.Controllers.ReservationsController.GetAll">
+            <summary>
+            Retrieves all user's reservations.
+            </summary>
+            <returns>Returns all reservations for the current user.</returns>
+        </member>
+        <member name="M:DemoProject.Api.Controllers.ReservationsController.CreateReservation(DemoProject.Api.Dtos.Reservations.In.CreateReservationIn)">
+            <summary>
+            Creates a new reservation on a specified date, for a specified duration, for the current user.
+            </summary>
+            <param name="dto">An object that containts a date and a duration (enum).</param>
+            <returns>Returns the reservation id.</returns>
+        </member>
+        <member name="M:DemoProject.Api.Controllers.ReservationsController.CancelReservation(System.Int32)">
+            <summary>
+            Cancels a reservation for the current user.
+            </summary>
+            <param name="id">Reservation id.</param>
+            <returns>Returns status code 200 if succeeded.</returns>
+        </member>
+        <member name="M:DemoProject.Api.Controllers.RoomsController.GetById(System.Int32)">
+            <summary>
+            Retrieves the room with the specified id.
+            </summary>
+            <param name="id">Room id.</param>
+            <returns>Return a room object.</returns>
+        </member>
+        <member name="M:DemoProject.Api.Controllers.RoomsController.Free(DemoProject.Api.Dtos.Rooms.In.FreeRoomIn)">
+            <summary>
+            Marks a room free on a specified date, for a specified duration, for the current user.
+            </summary>
+            <param name="dto">An object that containts a date and a duration (enum).</param>
+            <returns>Returns status code 200 if succeeded.</returns>
+        </member>
+        <member name="M:DemoProject.Api.Controllers.RoomsController.Cancel(DemoProject.Api.Dtos.Rooms.In.CancelFreeRoomIn)">
+            <summary>
+            Cancel a user's free spot marking.
+            </summary>
+            <param name="dto">An object that contains a room id and a date.</param>
+            <returns>Returns empty or a list if other user's reservation and contant ifno.</returns>
+        </member>
+    </members>
+</doc>
